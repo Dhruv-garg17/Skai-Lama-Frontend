@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://skai-lama-backend-zk0v.onrender.com';
+const API_URL = 'https://skai-lama-backend-zk0v.onrender.com/api';
 // const API_URL = 'http://localhost:5000/api';
 
 // User services
