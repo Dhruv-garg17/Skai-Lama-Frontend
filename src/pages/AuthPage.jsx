@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import api from '../services/api';
 import AuthContext from '../context/AuthContext';
 import quesLogo from '../assets/QuesLogo 1.png';
+import Logo from '../assets/logo.png';
 
 const AuthPage = () => {
   const [isRegister, setIsRegister] = useState(true);
@@ -47,18 +48,23 @@ const AuthPage = () => {
   return (
     <div className="flex h-screen flex-col lg:flex-row bg-gradient-to-r from-purple-500 to-purple-900 bg-cover">
       {/* Left Box */}
-      <div className="w-full w-lg-2/3 flex flex-col justify-start p-20  bg-[url(src/assets/auth-bg.png)]  text-white">
+<div className="w-full flex flex-col justify-start p-20 bg-[url('/src/assets/auth-bg.png')] bg-cover text-white">
         <img src={quesLogo} alt="" width={256} height={57} className='mb-6'/>
-        <h1 className="text-[40px] text-lg-[90px] leading-tight font-thin mb-4 max-w-[647px] mt-4">
-          Your podcast will no longer be just a hobby.
+        <h1 className="text-[60px] text-lg-[90px] leading-tight font-thin mb-4 max-w-[647px] mt-4">
+          Your podcast <br />
+           will no longer <br />
+            be just a hobby.
         </h1>
+       
         <p className="text-3xl max-w-[400px]">Supercharge Your Distribution using our AI assistant!</p>
       </div>
       
       {/* Right Box */}
       <div className="w-full w-lg-2/3 bg-gray-100 flex flex-col justify-center items-center p-10">
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-semibold text-purple-700">Welcome to Ques.AI</h2>
+          <img src={Logo}  alt="" width={100} height={57} className='mb-6 block mx-auto'/>
+          <h2 className="text-[40px]  text-blue-600">Welcome to  </h2> 
+           <h2 className="text-[40px] text-2xl font-semibold text-purple-700">Ques.AI</h2>
         </div>
         <form onSubmit={onSubmit} className="w-full">
           {isRegister && (
@@ -114,9 +120,10 @@ const AuthPage = () => {
           Continue with Google
         </button>
         <p className="mt-4 text-sm">
-          Don’t have an account? 
+          {/* Don’t have an account?  */}
+          {isRegister ? 'Already a member? ' : 'Don’t have an account?'}
           <a href="#" className="text-purple-600" onClick={() => setIsRegister(!isRegister)}>
-            {isRegister ? 'Login' : 'Create Account'}
+            {isRegister ? ' Login' : ' Create Account'}
           </a>
         </p>
       </div>

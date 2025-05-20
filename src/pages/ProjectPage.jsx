@@ -100,24 +100,39 @@ const ProjectPage = () => {
 
 
                     <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="border p-4 rounded-lg shadow-md text-center cursor-pointer flex justify-between gap-1">
-                            <div>
-                                <p className="font-bold text-start">RSS Feed</p>
-                                <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+                        
+                        <div className="border p-4 rounded-lg shadow-md cursor-pointer flex items-start justify-between gap-4">
+                        {/* Left Text Block */}
+                        <div className="flex flex-col text-start">
+                            <p className="font-bold">RSS Feed</p>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+                                    <p className="text-sm text-gray-500">Dolor Lorem sit.</p>
+                                </div>
                             </div>
-                            <img src={rssImage} alt="" className='size-10' />
+
+                        {/* Right Icon */}
+                            <img src={rssImage} alt="" className="size-10 mt-1" />
                         </div>
-                        <div className="border p-4 rounded-lg shadow-md text-center cursor-pointer flex justify-between gap-1" onClick={() => setIsModalOpen(true)}>
-                            <div>
-                                <p className="font-bold text-start">Youtube Video</p>
-                                <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+
+
+                        <div className="border p-4 rounded-lg shadow-md text-center cursor-pointer flex justify-between gap-4" onClick={() => setIsModalOpen(true)}>
+                            <div className="flex flex-col text-start" >
+                                <p className="font-bold">Youtube Video</p>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+                                    <p className="text-sm text-gray-500">Dolor Lorem sit.</p>
+                                </div>
                             </div>
                             <img src={youtubeImage} alt="" className='size-10' />
                         </div>
                         <div className="border p-4 rounded-lg shadow-md text-center cursor-pointer flex justify-between gap-1">
-                            <div>
+                            <div className="flex flex-col text-start">
                                 <p className="font-bold text-start">Upload Files</p>
-                                <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+                                <div className="flex flex-col space-y-1">
+                                    <p className="text-sm text-gray-500">Lorem ipsum dolor sit.</p>
+                                    <p className="text-sm text-gray-500">Dolor Lorem sit.</p>
+                                </div>
                             </div>
                             <div className="size-10 bg-purple-200 rounded-lg flex items-center justify-center">
                                 <svg className='size-8' viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,7 +182,7 @@ const ProjectPage = () => {
                                             <td className="p-4">{format(new Date(file.createdAt), 'dd MMM yy | HH:mm')}</td>
                                             <td className="p-4">
                                                 <button className="bg-gray-200 px-3 py-1 rounded mr-2" onClick={() => handleTranscript(file._id, file.content)}>View</button>
-                                                <button className="bg-red-500 text-white px-3 py-1 rounded" onClick={() => deleteHandleFile(file._id)}>Delete</button>
+                                                <button className="bg-gray-200 text-red-700 px-3 py-1 rounded" onClick={() => deleteHandleFile(file._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     ))}
